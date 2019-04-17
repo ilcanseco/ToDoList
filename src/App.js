@@ -2,17 +2,15 @@ import React, { Component } from "react";
 // import logo from "./logo.svg";
 import "./App.css";
 import ToDoItem from "./ToDoItem";
+import todosData from "./todosData";
 
 class App extends Component {
   render() {
-    return (
-      <div className="todo-list">
-        <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
-        <ToDoItem />
-      </div>
-    );
+    const todoItems = todosData.map(item => (
+      <ToDoItem key={item.id} item={item} />
+    ));
+
+    return <div className="todo-list">{todoItems}</div>;
   }
 }
 
