@@ -5,8 +5,14 @@ import ToDoItem from "./ToDoItem";
 import todosData from "./todosData";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      todos: todosData
+    };
+  }
   render() {
-    const todoItems = todosData.map(item => (
+    const todoItems = this.state.todos.map(item => (
       <ToDoItem key={item.id} item={item} />
     ));
 
