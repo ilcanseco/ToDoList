@@ -11,6 +11,14 @@ function ToDoItem(props) {
     color: "#ff0000"
   };
 
+  function makeItem(text) {
+    return {
+      id: this.id + 1,
+      completed: false,
+      text: text
+    };
+  }
+
   return (
     <div className="todo-item">
       <input
