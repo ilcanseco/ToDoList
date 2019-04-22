@@ -11,20 +11,12 @@ function ToDoItem(props) {
     color: "#ff0000"
   };
 
-  function makeItem(text) {
-    return {
-      id: this.id + 1,
-      completed: false,
-      text: text
-    };
-  }
-
   return (
     <div className="todo-item">
       <input
         type="checkbox"
         checked={props.item.completed}
-        onChange={() => props.handleChange(props.item.id)}
+        onChange={() => props.handleChange(props.index)}
       />
       <p style={props.item.completed ? completedStyle : unComplete}>
         {props.item.text}
